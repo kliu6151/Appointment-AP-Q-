@@ -12,11 +12,21 @@ public class TimeInterval {
 
     public boolean overlapsWith(TimeInterval interval)
     {
-        if(interval.startTime >= startTime && interval.startTime <= endTime ||
-        interval.endTime >= startTime && interval.endTime <= endTime)
+        if(interval.startTime > startTime && interval.startTime < endTime ||
+        interval.endTime > startTime && interval.endTime < endTime)
         {
             return true;
         }
         return false;
+    }
+
+    public int getStartTime()
+    {
+        return this.startTime;
+    }
+
+    public int getEndTime()
+    {
+        return this.endTime;
     }
 }

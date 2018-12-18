@@ -30,5 +30,18 @@ public class DailySchedule {
             return true;
         }
         else
+        {
+            boolean conflicts = false;
+            for (Appointment curAppt : apptList){
+                if(appt.conflictsWith(curAppt) && !conflicts) conflicts = true;
+            }
+            if (!conflicts) apptList.add(appt);
+            return conflicts;
+        }
+    }
+
+    public String toString()
+    {
+        return apptList.toString();
     }
 }

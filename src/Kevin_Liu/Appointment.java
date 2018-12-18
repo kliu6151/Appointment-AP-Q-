@@ -3,9 +3,9 @@ package Kevin_Liu;
 public class Appointment {
     public TimeInterval interval;
 
-    public Appointment(TimeInterval interval)
+    public Appointment(int startTime, int endTime)
     {
-        this.interval = interval;
+        this.interval = new TimeInterval(startTime, endTime);
     }
     public TimeInterval getTime()
     {
@@ -18,5 +18,10 @@ public class Appointment {
             return true;
         }
         return false;
+    }
+
+    public String toString()
+    {
+        return "Start: " + this.interval.getStartTime() + ", End: " + this.interval.getEndTime() + "\n";
     }
 }
